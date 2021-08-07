@@ -1,10 +1,8 @@
-# The name of project
-## Book App
-<BR>
-
+# Book App
 # Links 
 [Figma link](https://www.figma.com/file/X183PfgsEmdP7wW3f2HMxF/Untitled?node-id=0%3A1) .
-
+[Book API documentation](https://developers.google.com/books/docs/v1/using) .
+[Quotes API resource](https://github.com/lukePeavey/quotable#get-quote-by-id) .
 
 # The problem
 The client loves reading books and novels and listening to music at the same time, so he wants an application that makes it easy for him to search for the book he wants, and listening to music instead of using tow apps.
