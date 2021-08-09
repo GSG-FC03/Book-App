@@ -1,18 +1,96 @@
-:root{
-    --page-color:#2B2B2B;
-    --primary:#EEBD35;
-    --secondary-grey:#C9C9C9;
-    --secondary-white:#2B2B2B;
-    --hover-color:#F3D172;
-    --card-color: #63625D;
-    --border-color:#C9C9C9;
-    --title-first:1.5rem;
-    --title-second:1.3rem;
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+
+:root {
+  --page-color: #2b2b2b;
+  --primary: #eebd35;
+  --secondary-grey: #c9c9c9;
+  --secondary-white: #2b2b2b;
+  --hover-color: #f3d172;
+  --card-color: #63625d;
+  --border-color: #c9c9c9;
+  --music-color: #1a1a1a;
+  --white-color: white;
+  --blackFont-color: black;
+  --title-first: 1.5rem;
+  --title-second: 1.3rem;
 }
 
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    background-color: var(--page-color);
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  background-color: var(--page-color);
+}
+
+/* Add Style to the svg picture */
+.pic {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 311px;
+  height: 249px;
+  margin: 93px 16px 74px 48px;
+}
+
+/* Add style to the name of the app (Book App) */
+.Book {
+  color: var(--white-color);
+  text-align: center;
+  margin-bottom: 28px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+}
+
+/* Add style to h2 element that contain the qoute */
+.qoute {
+  color: var(--white-color);
+  text-align: center;
+  margin-bottom: 28px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-size: 21px;
+  min-width: 90 vw;
+  width: 91%;
+  margin: auto;
+}
+
+/* Add style to Get Started button */
+.start-button {
+  height: 5.5vh;
+  color: var(--blackFont-color);
+  background-color: var(--primary);
+  display: block;
+  border-radius: 8px;
+  font-size: 21px;
+  width: 91%;
+  margin: auto;
+  margin-top: 46px;
+}
+
+/* Add media query to make the page responsive */
+@media screen and (min-width: 1200px) {
+  .pic {
+    margin-top: 130px;
+    position: relative;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+  .Book {
+    font-size: 40px;
+    margin-bottom: 75px;
+  }
+  .qoute {
+    margin-top: 70px;
+    font-size: 23px;
+    width: 45%;
+  }
+  .start-button {
+    margin-top: 80px;
+    width: 60%;
+    height: 55px;
+    font-size: 30px;
+  }
 }
