@@ -6,7 +6,7 @@ function getRandomQuotes() {
   fetch("https://quotable.io/random")
     .then((response) => response.json())
     .then((data) => {
-         quote.innerHTML = data.content;
+         quote.innerHTML ='" '+ data.content +' "';
     })
     .catch((error) => console.log("Error: ", error));
 }
