@@ -1,3 +1,22 @@
+:root{
+    --page-color:#2B2B2B;
+    --primary:#EEBD35;
+    --secondary-grey:#C9C9C9;
+    --secondary-white:#2B2B2B;
+    --hover-color:#F3D172;
+    --card-color: #63625D;
+    --border-color:#C9C9C9;
+    --music-color:#1A1A1A;
+    --title-first:1.5rem;
+    --title-second:1.3rem;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: var(--page-color);
+}
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 *{
 	background-color: #2B2B2B;
