@@ -12,7 +12,6 @@ popup.addEventListener("click", hidePopup); // Hide book descriptions when click
 
 
 
-
 //  Function to get images from API
 
 // book dsecription path is: bookData.description
@@ -31,7 +30,6 @@ function randomBook(){
           
             book.addEventListener("click", displayPopup); //Display the popup when click at book image
             
-            
             bookImage = document.createElement("img")
             bookImage.classList.add("book-image")
             bookImage.setAttribute("class",`book-image ${bookID}`)
@@ -47,21 +45,55 @@ function randomBook(){
 
 //  Function to display the Popup when click at container and display the book details
 function displayPopup(event){
+    if(popup.style.display = "none"){
+        popup.style.display = "flex"
+        popup.style.position = "fixed"
+    
     let bookArray =[];
     bookArray.push(event.target.className.split(" ")[1])
     let bookID = bookArray[0];
-    console.log(bookID)
+
     fetch(`https://www.googleapis.com/books/v1/volumes/${bookID}`)
     .then(res=>res.json())
-    .then(data=>console.log(data))
-    popup.style.display ="block";
-    if(popup.style.display = "none"){
-        popup.style.display = "flex"
-    }
+    .then(data=>{
+        let bookimg= data.volumeInfo.imageLinks.smallThumbnail;
+        let bookTitle= data.volumeInfo.title;
+        let bookDescription= data.volumeInfo.description;
+        // console.log("999",bookTitle,bookDescription)
+        popupBackground = document.createElement("div");
+        popupBackground.classList.add("popup-background");
+        popup.appendChild(popupBackground)
+
+        popupBook = document.createElement("img");
+        popupBook.classList.add("popup-book");
+        popupBackground.appendChild(popupBook)
+        popupBook.src = bookimg
+
+        popupTitle = document.createElement("h4");
+        popupBook.classList.add("popup-title");
+        popupBackground.appendChild(popupTitle)
+        popupTitle.innerHTML = bookTitle
+        
+        popupDescription = document.createElement("p");
+        popupDescription.classList.add("popup-description");
+        popupBackground.appendChild(popupDescription)
+        popupTitle.innerHTML = bookDescription
+    })
+
+    // .then(data=>console.log(data))
+    .catch(error=> console.log("Error!: ",error))
+    
+
 
 }
+}
 
-//  Function to display the Popup when click at anywhere
+// //  Function to display the Popup when click at anywhere
+// function hidePopup(){
+// popup.style.display = "none"
+// }
+
 function hidePopup(){
-popup.style.display = "none"
-}
+    popup.style.display = "none"
+    }
+    // popup.removeEventListener("click",hidePopup)
