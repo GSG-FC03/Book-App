@@ -30,10 +30,13 @@
 }
 
 .search-input {
+  color: white;
   height: 44px;
   border-radius: 8px;
   padding-left: 42px;
   width: 90%;
+  outline: none;
+
 }
 .rec-text {
   margin-left: 16px;
@@ -70,10 +73,8 @@
   position: absolute;
   top: 0;
   left: 0;
-  background-color: #000000;
-  opacity: 60%;
+  background-color: rgba(0, 0, 0, 0.4);
   display: flex;
-   
   justify-content: center;
   align-items: flex-end;
   z-index: 10;
@@ -83,31 +84,33 @@
 .popup-background {
   border: rgb(168, 168, 168) 2px solid;
   width: 100%;
-  /* height: fit-content; */
   height: fit-content;
   left: 0;
   background-color: #27292D;
-  /* opacity: 0%; */
   border-radius: 8px 8px 0px 0px;
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   align-items: center;
 }
 
 .popup-book{
+  min-width: 80px;
   width: 100px;
-  height: 100px;
+  max-height: 200px;
   margin: 1rem;
+  
 }
 
-.popup-title{
+.popup-title {
   color: white;
-  font-size: 1.5rem;
-  max-width: 80%;
+  font-size: 1.3rem;
+  font-weight: 550;
+  line-height: 30px;
+  margin-left: 1rem;
+  text-align: center;
 }
 .popup-description{
-  color: white;
+  color: rgb(236, 236, 236);
   font-size: 1.2rem;
   letter-spacing: 1px;
   line-height: 24px;
