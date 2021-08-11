@@ -7,8 +7,8 @@ const popup = document.querySelector(".popup") //pop up that contains the book d
 
 //  An event listener that applies function when the page loaded
 document.addEventListener("DOMContentLoaded", randomBook); //dipslay books when open the page 
-bookArea.addEventListener("click", displayPopup); //Display the popup when click at book image
 popup.addEventListener("click", hidePopup); // Hide book descriptions when click anywhere
+
 
 
 
@@ -23,12 +23,18 @@ function randomBook(){
         for(let i=0; i<=10; i++){
             let bookData=data.items[i].volumeInfo;
             let img= bookData.imageLinks.smallThumbnail;
+            let bookID= data.items[i].id;
+            console.log(bookID)
             
             book = document.createElement("div")
-            book.classList.add("book")
+            book.setAttribute("class",`book ${bookID}`) // give books className book to style it | and class as bookID to call it onclick
+          
+            book.addEventListener("click", displayPopup); //Display the popup when click at book image
+            
             
             bookImage = document.createElement("img")
             bookImage.classList.add("book-image")
+            bookImage.setAttribute("class",`book-image ${bookID}`)
             
             bookArea.appendChild(book)
             book.appendChild(bookImage)
@@ -39,9 +45,16 @@ function randomBook(){
     .catch(error=>console.log("There is an error which is",error))
 }
 
-//  Function to display the Popup when click at container
-function displayPopup(){
-    // popup.style.display ="block";
+//  Function to display the Popup when click at container and display the book details
+function displayPopup(event){
+    let bookArray =[];
+    bookArray.push(event.target.className.split(" ")[1])
+    let bookID = bookArray[0];
+    console.log(bookID)
+    fetch(`https://www.googleapis.com/books/v1/volumes/${bookID}`)
+    .then(res=>res.json())
+    .then(data=>console.log(data))
+    popup.style.display ="block";
     if(popup.style.display = "none"){
         popup.style.display = "flex"
     }
