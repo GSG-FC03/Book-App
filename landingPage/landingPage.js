@@ -14,3 +14,11 @@ function getRandomQuotes() {
 
 //Call the function
 getRandomQuotes();
+
+// Create function to move to recommended Page
+let startButton = document.querySelector(".start-button");
+startButton.addEventListener("click", moveToSearchPage);
+
+function moveToSearchPage() {
+  window.location.href = "./RecommendedPage/recommended.html";
+}
