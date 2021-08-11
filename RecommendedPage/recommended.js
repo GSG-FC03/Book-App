@@ -15,15 +15,17 @@ popup.addEventListener("click", hidePopup); // Hide book descriptions when click
 //  Function to get images from API
 
 // book dsecription path is: bookData.description
-function randomBook(){
+
+function randomBook() {
     fetch("https://www.googleapis.com/books/v1/volumes?q=random")
-    .then(res=>res.json())
-    .then(data=> {
+    .then(res => {
+        return res.json();
+    })
+    .then(data => {
         for(let i=0; i<=10; i++){
             let bookData=data.items[i].volumeInfo;
             let img= bookData.imageLinks.smallThumbnail;
             let bookID= data.items[i].id;
-            console.log(bookID)
             
             book = document.createElement("div")
             book.setAttribute("class",`book ${bookID}`) // give books className book to style it | and class as bookID to call it onclick
@@ -42,6 +44,7 @@ function randomBook(){
     })
     .catch(error=>console.log("There is an error which is",error))
 }
+
 
 //  Function to display the Popup when click at container and display the book details
 function displayPopup(event){
@@ -70,21 +73,27 @@ function displayPopup(event){
         popupBook.src = bookimg
 
         popupTitle = document.createElement("h4");
-        popupBook.classList.add("popup-title");
+        popupTitle.classList.add("popup-title");
         popupBackground.appendChild(popupTitle)
-        popupTitle.innerHTML = bookTitle
-        
+        if(bookTitle.length > 50) {
+            popupTitle.textContent = `${bookTitle.substring(0, 50)}...`;
+        }else {
+            popupTitle.textContent = bookTitle;
+        }
+        console.log({bookTitle})
         popupDescription = document.createElement("p");
         popupDescription.classList.add("popup-description");
-        popupBackground.appendChild(popupDescription)
-        popupTitle.innerHTML = bookDescription
+        popupBackground.appendChild(popupDescription);
+        if(bookDescription.length > 500) {
+            popupDescription.textContent = `${bookDescription.substring(0, 500)}...`;
+        }else {
+            popupDescription.textContent = bookDescription;
+        }
     })
 
     // .then(data=>console.log(data))
     .catch(error=> console.log("Error!: ",error))
     
-
-
 }
 }
 
@@ -94,6 +103,7 @@ function displayPopup(event){
 // }
 
 function hidePopup(){
-    popup.style.display = "none"
+    popup.style.display = "none";
+    popup.textContent = "";
     }
     // popup.removeEventListener("click",hidePopup)
