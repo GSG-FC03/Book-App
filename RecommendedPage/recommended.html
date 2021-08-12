@@ -1,53 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-	
-	<head class="body">
-		<meta charset="UTF-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		
-		<link rel="stylesheet" href="./recommended.css" />
-		<title>Book descriptions</title>
-	</head>
-	
-	<body>
-		
-		
-		<main class="main">
-			<!-- create search bar input with icon  -->
+  <head class="body">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="./recommended.css" />
+    <title>Book descriptions</title>
+  </head>
+
+  <body>
+    <main class="main">
+      <!-- create search bar input with icon 
 			<section class="search">
 				<div>
 					<img src="../img/icon.svg" class="search-icon" alt="icon">
 					<input type="text" class="search-input" placeholder="Find your book...">
 				</div>
 				
-			</section>
-			<!-- Recommended Books section  -->
-			<section class="recommended">
-				<h2 class="rec-text">
-					Book descriptions
-				</h2>
-				<!-- This section to show recommended books  (temporary), using API  -->
-				<div class="container" id="containerPopup">
-					 <div class="book">
-					<!--	<img src="../img/image 2.svg" class="book-image" alt="pic"> -->
-					</div>
-					
-				</div>
-			</section>
+			</section> -->
+      <!-- Recommended Books section  -->
+      <section class="recommended">
+        <h2 class="rec-text">Recommended</h2>
+        <!-- Create Go Serach link to go to the search page -->
+        <a href="../searchPage/searchPage.html" id="goSearchB">Go Search ></a>
+        <!-- This section to show recommended books  (temporary), using API  -->
+        <div class="container" id="containerPopup">
+          <div class="book">
+            <!--	<img src="../img/image 2.svg" class="book-image" alt="pic"> -->
+          </div>
+        </div>
+      </section>
 
-				<!-- Popup to display the book description (temporary)  -->
-			<section class="popup" id="openPopup">
-				 <!-- <div class="popup-background">
+      <!-- Popup to display the book description (temporary)  -->
+      <section class="popup" id="openPopup">
+        <!-- <div class="popup-background">
 					<img class="popup-book" src="../img/image 2.svg" alt="book iamge">
 					<h4 class="popup-title">Book Titke goes here</h4>
 					<p class="popup-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat ea ipsam sed tempora? Libero temporibus quasi, neque provident iste, possimus distinctio vero modi, molestias tenetur atque pariatur autem quas vel.</p>
 				</div> -->
-			</section>
-		</main>
-	</body>
-	<!-- link js file -->
-	<script src="./recommended.js">
-
-</script>
+      </section>
+    </main>
+    <script src="./recommended.js">
+  </body>
 </html>
