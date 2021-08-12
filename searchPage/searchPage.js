@@ -7,6 +7,7 @@ const resultsArea = document.querySelector(".container")
 
 
 
+
 searchIcon.addEventListener("click",searchResult)
 function searchResult(){
     // console.log("969999",searchInput.value)  
@@ -18,25 +19,29 @@ function searchResult(){
         alert("write a key word")//this santance will appear when user does't input any thing in the search bar
         }
         else {
+           resultsArea.innerHTML = "";
+
     for(let i=0; i<=10;i++){ // used for loop to appear 10 books 
     let BookTitle=data.items[i].volumeInfo.title; // fetch title from api
     let BookDesciption=data.items[i].volumeInfo.description; // fetch description from api
     let BookImg=data.items[i].volumeInfo.imageLinks.smallThumbnail; // fetch link of image from api
-    
+    let id =data.items[i].volumeInfo.industryIdentifiers[0].identifier;
+        
      card=document.createElement("div") 
-     card.classList.add("card")
+     card.classList.add("card", id)
+     card.addEventListener("click",getIdToGetDetails)
 
      cardImage=document.createElement("div")
-      cardImage.classList.add("card-img")
+    cardImage.classList.add("card-img")
 
       // this section to appear the image of book from API
       imgElement=document.createElement("img")
-      imgElement.classList.add("img")
+      imgElement.classList.add("img", id)
       imgElement.src=BookImg;
     
 
      cardContent=document.createElement("div")
-     cardContent.classList.add("card-content")
+     cardContent.classList.add("card-content", id)
      
     // this section to appear the title of book from API
      cardContentTitle=document.createElement("h4")
@@ -60,7 +65,17 @@ function searchResult(){
     })
     .catch(error => console.log("Error:",error))
 }
+// card.addEventListener("click",open)
+// function open(){
 
+// }
 
+function getIdToGetDetails(ele){
+let cardClassList = [];
+cardClassList.push(ele.target.className.split(" ")[1])
+let bookId = cardClassList[0]
+localStorage.setItem("bookId", JSON.stringify(bookId));
+location.href="../bookMusicPage/bookMusicPage.html";
+}
 
 
