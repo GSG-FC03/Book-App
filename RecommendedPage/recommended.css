@@ -50,6 +50,14 @@
 
 /* book classes */
 
+.search-input{
+height: 44px;
+border-radius: 8px;
+padding-left: 42px;
+width: 90%;
+color: white;
+}
+
 .container {
   /* width: 91.5vw; */
   display: flex;
