@@ -21,7 +21,7 @@
 
 .search{
 height: 44px;
-width: 90%;
+width: 100%;
 border-radius: 8px;
 margin-left: 16px;
 margin-top: 57px;
@@ -63,14 +63,14 @@ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubun
     width: 91.5vw;
     margin: auto;
     margin-top: 1rem;
-    border:white 1px solid;
+    /* border:white 1px solid; */
 }
 
 /* style of card*/
 .card{
     display: flex;
     margin-top: 1rem;
-    border: 1px solid chocolate;   
+    border: 1px solid #FFFF;   
 }
 
 /* style of book image*/
@@ -94,16 +94,16 @@ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubun
 
 /* style of title of book*/
 .card-content-title{
-    font-size: 24;
+    font-size: 16px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    color:var(--primary);
+    color:#FFFF;
     text-align: center;
     width: fit-content;
     
 }
 /* style of description of book*/
 .card-content-description{
-    font-size: 24;
+    font-size: 14px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: white;
     margin-top: 10px;
