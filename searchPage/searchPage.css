@@ -70,7 +70,7 @@ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubun
 .card{
     display: flex;
     margin-top: 1rem;
-    border: 1px solid #FFFF;   
+    border: 1px solid #63625D;   
 }
 
 /* style of book image*/
@@ -80,6 +80,7 @@ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubun
     margin-top: 10px;
     height: fit-content;
     min-width: 100px;
+    border-radius: 10px;
     
 }
 
