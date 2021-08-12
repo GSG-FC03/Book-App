@@ -135,3 +135,17 @@ nextBtn.addEventListener("click", nextSong);
 music.addEventListener("ended", nextSong);
 music.addEventListener("timeupdate", updateProgressBar);
 progressContainer.addEventListener("click", setProgressBar);
+
+
+// Dipslay the book content
+let bookId = JSON.parse(localStorage.getItem("bookId"))
+google.books.load()
+
+function initialize() {
+  var viewer = new google.books.DefaultViewer(
+    document.getElementById('viewerCanvas')
+  )
+  viewer.load(`ISBN:${bookId}`)
+}
+
+google.books.setOnLoadCallback(initialize)
