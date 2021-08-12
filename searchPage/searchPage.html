@@ -1,32 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./searchPage.css" />
 
     <title>Result</title>
-</head>
-<body>
-    
-	<main class="main">
-		<!-- create search bar input with icon  -->
-		<section class="search">
-			<div>
-				<img src="../img/icon.svg" class="search-icon" alt="icon">
-				<input type="text" class="search-input" placeholder="Find your book...">
-			</div>
-
-		</section>
-		<!-- Result section  -->
-		<section class="Result">
-			<h2 class="result-text">
-				Result
-			</h2>
-			<!-- this section to show Book Result, using api  -->
-			<div class="container">
-			<!-- <div class="card">
+  </head>
+  <body>
+    <main class="main">
+      <!-- create search bar input with icon  -->
+      <section class="search">
+        <div>
+          <img src="../img/icon.svg" class="search-icon" alt="icon" />
+          <input
+            type="text"
+            class="search-input"
+            placeholder="Find your book..."
+          />
+        </div>
+      </section>
+	   <!-- Create Recommended link to go back to the recommended page -->
+	   <a href="../RecommendedPage/recommended.html" id="RecommendedL"
+	   >< Recommended</a
+	 >
+      <!-- Result section  -->
+      <section class="Result">
+        <!-- this section to show Book Result, using api  -->
+        <div class="container">
+          <!-- <div class="card">
 				<div class="card-img">
 					<img src="" alt="" class="img" >
 				</div>
@@ -35,10 +38,9 @@
 					<p class="card-content-description"></p>
 				</div>
 			</div>  -->
-			
-			</div>
-		</section>
-	</main>
-	<script src="./searchPage.js"></script>
-</body>
+        </div>
+      </section>
+    </main>
+    <script src="./searchPage.js"></script>
+  </body>
 </html>
